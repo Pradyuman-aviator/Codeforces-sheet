@@ -7,41 +7,31 @@ int main() {
 
     int t;
     cin >> t;
-
     while (t--) {
-        long long n;
+        int n;
         cin >> n;
         vector<long long> a(n);
         for (int i = 0; i < n; i++) {
             cin >> a[i];
         }
 
-        map<long long,long long> frequency_map;
-        for (int i = 0; i < n; i++) {
-            frequency_map[a[i]]++;
+        map<long long, long long> mp;
+        for (auto x : a) {
+            mp[x]++;
         }
 
-        if (frequency_map.size() >= 3) {
+        if (mp.size() >= 3) {
             cout << "NO\n";
-        } 
-        else if (frequency_map.size() == 2) {
-            long long freq_1 = frequency_map.begin()->second;
-            long long freq_2 = frequency_map.rbegin()->second;
+        } else {
+            long long f1 = mp.begin()->second;
+            long long f2 = mp.rbegin()->second;
 
-            if (freq_1 == freq_2) {
+            if (f1 == f2 || (n % 2 == 1 && abs(f1 - f2) == 1)) {
                 cout << "YES\n";
-            } 
-            else if (n % 2 == 1 && abs(freq_1 - freq_2) == 1) {
-                cout << "YES\n";
-            } 
-            else {
+            } else {
                 cout << "NO\n";
             }
-        } 
-        else {
-            cout << "NO\n";
         }
     }
-
     return 0;
 }
