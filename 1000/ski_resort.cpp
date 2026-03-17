@@ -25,8 +25,12 @@ int main(){
 
         }
 
-    // now to find the number ways i can go 
+
+    // now to find the number ways i can go  -> 
+    long long ans = 0;
     
+    
+
 
 
 
