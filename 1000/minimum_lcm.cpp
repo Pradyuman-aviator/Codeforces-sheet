@@ -23,7 +23,7 @@ int main()
 
             }
         }
-        cout<< ans_a << " " << ans_b<<endl;
+        cout<< ans_a <<" "<< ans_b<<endl;
 
         
 
