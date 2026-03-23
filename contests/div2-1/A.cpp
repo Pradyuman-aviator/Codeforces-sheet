@@ -7,7 +7,7 @@ int main() {
 
     int t;
     cin >> t;
-    // cin >> t; wtf ? 
+    // cin << t; wtf ? 
     while (t--){
                 long long n, c, k;
         cin >> n >> c >> k;
@@ -22,8 +22,7 @@ int main() {
                 k-= extra;
                 c += a[i] + extra;
             } else break;
-                
-            
+ 
         }
       
         cout << c << "\n";
