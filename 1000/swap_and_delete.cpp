@@ -11,6 +11,7 @@ int main() {
     while (t--) {
         string s;
         cin >> s;
+        
 
         int count0 = 0, count1 = 0;
         // by obsercation

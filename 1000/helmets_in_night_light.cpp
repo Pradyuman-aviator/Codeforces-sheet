@@ -24,8 +24,9 @@ int main() {
         for(int i = 0; i < n; i++) {
             v.push_back({b[i], a[i]});
         }
+        sort(v.begin() ,v.end());
 
-        sort(v.begin(), v.end());
+        sort(v.begin(), v.end()); // nlogn 
 
         long long cost = p;          // first person informed directly
         long long remaining = n - 1; // people left to inform
@@ -37,7 +38,7 @@ int main() {
 
             if(shareCost >= p) break;
 
-            long long use = min(capacity, remaining);
+            long long use = min(capacity, remaining)
 
             cost += use * shareCost;
             remaining -= use;
