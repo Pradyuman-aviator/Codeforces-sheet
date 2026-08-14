@@ -18,27 +18,21 @@ int main()
             cin >> a[i];
         }
 
-        sort(a.begin(), a.end());
+        int curr = a[0];
+        int Maxi = a[0];
 
-        // fetching each element
-
-        int Maxi = INT_MIN;
-
-        for (int i = 0; i < n; i++)
+        for (int i = 1; i < n; i++)
         {
-            vector<int> temp;
-
-            while (i + 1 < n && a[i + 1] == a[i] + 1)
+            if (abs(a[i] % 2) != abs(a[i - 1] % 2))
             {
-                temp.push_back(a[i]);
-                i++;
+                curr = max(0,curr) + a[i];
+            }
+            else
+            {
+                curr = a[i];
             }
 
-            temp.push_back(a[i]);
-
-            int sum = accumulate(temp.begin(), temp.end(), 0);
-
-            Maxi = max(sum, Maxi);
+            Maxi = max(curr,Maxi);
         }
 
         cout << Maxi << endl;
@@ -46,4 +40,3 @@ int main()
 
     return 0;
 }
-
